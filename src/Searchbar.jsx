@@ -4,20 +4,20 @@ import InputBase from '@mui/material/InputBase';
 import { styled, alpha } from '@mui/material/styles';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import './cssfile/top.css';
+  import './cssfile/handling.css';
+//  import './cssfile/dash.css';
 import SyncIcon from '@mui/icons-material/Sync';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 // import SelectTextFields from "./Dropdown";
 import MultipleSelectPlaceholder from './Dropmenu';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import SearchIcon from '@mui/icons-material/Search';
-// import SquareCorners from './Paper';
+
 import TemporaryDrawer from './TemporaryDrawer';
 // import Drawer from '@mui/material/Drawer';
  import { useState,useEffect } from 'react';
-//  import card from './Card';
-//  import SquareCorners from './Paper';
 import Cards from './Cards';
+import { BorderColor } from '@mui/icons-material';
 
 
 
@@ -27,8 +27,8 @@ const SearchBox = styled('div')(({ theme }) => ({
     borderRadius: theme.shape.borderRadius,
     padding: theme.spacing(1),
     display: 'flex',
-    // alignItems: 'center',
-    // justifyContent:'center',
+    alignItems: 'center',
+     justifyContent:'center',
     width: '50%',
     marginLeft: '246px',
 
@@ -101,6 +101,12 @@ useEffect(() => {
     const [isListOpen, setIsListOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
 
+    const handleOptionSelect = (option) => {
+        setSelectedOption(option);
+        setSearchTerm(option.label);
+        setIsListOpen(false);
+      };
+
     const handleSearch = (e) => {
         const searchTerm = e.target.value;
         setSearchTerm(searchTerm);
@@ -111,11 +117,7 @@ useEffect(() => {
         }
       };
 
-      const handleOptionSelect = (option) => {
-        setSelectedOption(option);
-        setSearchTerm(option.label);
-        setIsListOpen(false);
-      };
+      
 
     //   const handleSearchBarClick = () => {
     //     setIsListOpen(true);
@@ -139,18 +141,24 @@ useEffect(() => {
 
     return (<>
     <div className='container1'>        <div className="Header" >
-            <p >Home</p>
-            <p> > </p>
-            <p className='bolder'> Dashboard</p>
-            <div className='textboxes'>
-                          <div className='textbox'>
-                <div className='searching,search-bar'
-                // onClick={handleSearchBarClick}
-                >
-                
-                    <SearchIcon style={{ position: 'absolute', marginTop: '3px', marginLeft: '3px' }} />
+      <div className='header-left'>
+            <div className='para'><p >Home</p>
+            <p> &gt; </p>
+            <p className='bolder'> Dashboard</p></div></div>
 
-                    <input type='search' className='searchtext' placeholder='Search Anywhere...'
+            <div className='header-center'>
+            <div className='textboxes'>
+                          {/* <div className='textbox'> */}
+                <div className='searching'>
+                <div className='search-bar'>
+                {/* onClick={handleSearchBarClick} */}
+                
+                
+                    <SearchIcon className="search-icon" 
+                    // style={{ position: 'absolute', marginTop: '3px', marginLeft: '3px' }} 
+                    />
+
+                    <input type='search' className='searchtext' placeholder='Search Anything...'
                      value={searchTerm} onChange={handleSearch} 
                      /></div>
                      {isListOpen && (
@@ -163,27 +171,31 @@ useEffect(() => {
                         </ul>
                       )}
             
-
+                </div>
+                <div className='boxes'>
                 <input className='inputb' type='text' />
-                <KeyboardArrowDownIcon />
-            </div>
-
+               <div className='board_down'> <KeyboardArrowDownIcon /></div></div>
+            {/* </div> */ }</div>
+                     </div> 
+              <div className='header-right'>
             <div className="icon">
 
                 <div className='icon1'> <NotificationsNoneIcon /></div>
-                <div className='icon2'>   <AccountCircleOutlinedIcon />
-                </div>
+                <div className='icon2'>   <AccountCircleOutlinedIcon /> </div></div>
             </div>
+        
         </div>
-        </div>
+
+                        {/* Action bar */}
+
         <div className='action'>
             <div className='btngrp'>     <TemporaryDrawer />   
             
       
                     {/* <button style={{width:'133px',height:'auto'}}  >Add Widget + </button> */}
-             <div className='buttons' >   <button style={{backgroundColor:'white',borderRadius:'8px',border:'none',height:'33px'}}><SyncIcon /></button></div>
-             <div className='buttons'> <button style={{backgroundColor:'white',borderRadius:'8px',border:'none',height:'33px'}}><MoreVertIcon /></button></div>
-                <MultipleSelectPlaceholder style={{ backgroundColor: "white", marginTop: '3px', height:'10px' }} /></div>
+             <div className='buttons' >   <button style={{backgroundColor:'white',marginTop:'7px',borderRadius:'6px',border:'none',height:'75%',padding:'5px'}}><SyncIcon style={{color:"black"}}/></button></div>
+             <div className='buttons'> <button style={{backgroundColor:'white',marginTop:'7px',borderRadius:'6px',border:'none',height:'75%',padding:'5px'}}><MoreVertIcon style={{color:"black"}} /></button></div>
+                <MultipleSelectPlaceholder style={{ backgroundColor: "white", marginTop: '3px', height:'10px',borderRadius:'6px',BorderColor:'rgb(37 15 92)' }} /></div>
 
 
                
@@ -193,8 +205,8 @@ useEffect(() => {
 
              
             <div className='heading'>
-                <h3 style={{marginLeft:'-17px'}}>CNAPP Dashboard</h3>
-                 <h5 style={{  margin: '-17px 642px 19px 5px' }}> CSPM Executive Dashboard</h5> </div></div>
+                <h3 style={{marginLeft:'-10px',paddingBottom:'7px'}}>CNAPP Dashboard</h3>
+                 <h5 style={{  margin: '-17px 659px 19px 5px' }}> CSPM Executive Dashboard</h5> </div></div>
                  {/* <MultiActionAreaCard/> */}
                  </div>          
                  

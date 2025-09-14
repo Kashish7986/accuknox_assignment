@@ -1,0 +1,200 @@
+/* ---------- Base ---------- */
+.container1 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 9px;
+  padding: 0 10px;
+  font-family: Arial, sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+.bolder {
+  font-weight: bold;
+}
+
+/* ---------- Header ---------- */
+.container1 .Header {
+  display: flex;
+  justify-content: space-between; /* breadcrumb left, controls right */
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 12px 10px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.para {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Search ---------- */
+.search-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 300px;
+  flex: 1;
+}
+
+.searchtext {
+  width: 100%;
+  padding-left: 28px;
+  height: 34px;
+  background-color: #ebebeb;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555;
+  font-size: 16px;
+}
+
+.list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-top: 5px;
+  padding: 10px;
+  z-index: 10;
+}
+
+/* ---------- Input & Dropdown ---------- */
+.inputb {
+  height: 34px;
+  padding: 0 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.board_down {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* ---------- Icons ---------- */
+.icon {
+  display: flex;
+  gap: 10px;
+  font-size: 22px;
+  align-items: center;
+}
+
+.icon1,
+.icon2 {
+  cursor: pointer;
+}
+
+/* ---------- Action Bar ---------- */
+.action {
+  margin-top: 12px;
+  background-color: #ebebeb;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.btngrp {
+  display: flex;
+  gap: 10px;
+}
+
+.btn1 {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.heading h3 {
+  margin: 0;
+}
+
+.heading h5 {
+  margin: 4px 0 0 0;
+  color: #333;
+}
+
+/* ---------- Cards ---------- */
+.card1 {
+  background-color: #f9f9f9;
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .header-right {
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+  }
+  .search-group {
+    flex: 1;
+    max-width: 100%;
+  }
+  .inputb {
+    flex: 1;
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container1 .Header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .header-right {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 10px;
+  }
+  .search-group {
+    width: 100%;
+  }
+  .inputb {
+    width: 100%;
+  }
+  .icon {
+    justify-content: center;
+    width: 100%;
+  }
+  .action {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

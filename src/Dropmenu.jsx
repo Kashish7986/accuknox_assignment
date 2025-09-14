@@ -53,10 +53,10 @@ export default function MultipleSelectPlaceholder() {
   return (
     <div>
         <div className='icons'>
-        <AccessTimeFilledIcon style={{marginTop:'14px',position: 'absolute', zIndex: '1',marginLeft: '12px'}}/>
+        <AccessTimeFilledIcon style={{marginTop:'14px',position: 'absolute', zIndex: '1',marginLeft: '12px',color:'rgb(37 15 92)'}}/>
         <label ></label>
-      <FormControl   sx={{ m: 1, width: 170, mt: 1 ,backgroundColor: 'white',marginTop:'10px',borderColor: 'rgb(218, 218, 215)',borderRadius:'10px',borderWidth:'1px'}} >
-        <Select style={{paddingLeft:'25px',height:'33px'}} 
+      <FormControl   sx={{ m: 1, width: 170, mt: 1 ,backgroundColor: 'white',marginTop:'10px',borderColor: 'rgb(37 15 92)',borderRadius:'10px',borderWidth:'1px'}} >
+        <Select style={{paddingLeft:'25px',height:'33px',textAlign:'center',borderRadius:'6px',borderColor: 'rgb(37 15 92)',color:'rgb(37 15 92)'}} 
           multiple
           displayEmpty
           value={personName}
@@ -72,7 +72,7 @@ export default function MultipleSelectPlaceholder() {
           MenuProps={MenuProps}
           inputProps={{ 'aria-label': 'Without label' }}
         >
-          <MenuItem disabled value="" style={{maxHeight: '138px'}}>
+          <MenuItem disabled value="" style={{maxHeight: '128px',textAlign:'center',color:'rgb(37 15 92)'}}>
             <em></em>
           </MenuItem>
           {names.map((name) => (

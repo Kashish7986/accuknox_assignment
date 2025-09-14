@@ -1,0 +1,41 @@
+.container1 {    box-sizing: border-box;    display: flex;    flex-direction: column;    margin: auto;    margin-top: 9px;    padding: 0 10px; /* Added to control internal spacing */}
+.para {    display: flex;}
+p {    margin-top: 8px;}
+.Header {   
+   display: flex;    
+   justify-content: flex-start;    
+   margin-left: 0;    
+   transform: translateX(-58px); /* Mimics margin-left: -58px for alignment */}
+.field {    background-color: gray;}
+.searching {    margin: auto;    display: flex;    align-items: center;    justify-content: center;}
+.search-bar {    display: flex;    flex-direction: column;    align-items: center;    width: max-content;    justify-content: center;    height: 30px;    flex: 1;}
+.searchtext {    height: 31px;    width: 345px;    padding-left: 28px;    background-color: #ebebeb;    border-color: #0000ff38;    border-radius: 8px;    margin-right: 31px;    display: flex;    flex: 1;}
+.search-icon {    position: absolute;    left: 8px;    top: 50%;    transform: translateY(-50%);    color: #555;    font-size: 15px;    pointer-events: none;}
+.list {    position: absolute;    top: 100%;    left: 640px;    width: 100px;    background-color: #fff;    border: 1px solid #ddd;    padding: 10px;    z-index: 1;}
+.search-container.is-list-open .searchtext {    margin-top: 20px;}
+.icon {    margin: auto;    display: flex;    border: #f1f1f1;    float: right;    font-size: 24px;    gap: 8px;    margin-bottom: 0px;}
+.icon1 {    border-color: #f1f1f1;    margin: 2px;    border-radius: 5px;}
+.icon2 {    border: #f1f1f1;    margin: 2px;    border-radius: 5px;}
+.action {    margin-top: 3px;    background-color: #ebebeb;    border: 1px;    min-width: max-content;    display: flex;    flex-direction: row-reverse;    justify-content: flex-start;    gap: 34px;    flex-wrap: wrap;}
+.bolder {    font-weight: bolder;}
+.btns1 {    margin-left: 2px;    margin-right: 2px;}
+.dropmenu {    margin-bottom: 10px;}
+.inputb {    height: 21px;    max-width: 60%;    filter: blur(3px);    margin-left: -9px;    margin-right: 13px;}
+.board_down {    margin-top: 2px;    margin-left: -16px;}
+.textboxes {    display: flex;    position: absolute;}
+.textbox {    display: flex;    gap: 2px;    margin: auto;    margin-left: 642px;    margin-right: 46px;    position: relative;}
+.head5 {    margin-right: 3px;}
+.heading {    display: flex;    flex-direction: column;    margin-top: 20px;    margin-left: 34px;}
+.btngrp {    height: 20%;    display: flex;    flex-direction: row;    gap: 3%;    margin-top: 6px;    margin-right: 40px;    margin-left: 9px;}
+.card1 {    background-color: #ebebeb;}
+.btn1 {    margin-top: 7px;    background-color: white;    border-color: rgb(218, 218, 215);    border-radius: 8px;}
+.drawer {    background-color: blue;    height: 80px;    margin-top: -31px;    display: flex;}
+.item1 {    margin-top: 38px;    margin-left: 18px;    color: white;}
+.item2 {    float: right;    margin-left: 662px;    color: white;    margin-top: 37px;}
+.item3 {    margin-left: 18px;}
+.item4 {    margin-left: 20px;}
+.btns {    display: flex;    flex-direction: row-reverse;    margin-bottom: 2px;    margin-top: 451px;    margin-right: 4px;    gap: 5px;    border-radius: 5px;}
+.check {    border-left: none;}
+/* Large screens (desktops, 1200px and above) */@media (min-width: 1200px) {    .container1 {        max-width: 1200px;        padding: 0 10px;    }    .searchtext {        width: 345px;    }    .list {        left: 640px;        width: 100px;    }    .textbox {        margin-left: 642px;        margin-right: 46px;    }    .Header {        margin-left: 0;        transform: translateX(-58px);        justify-content: center;    }}
+/* Medium screens (tablets and smaller desktops, 768px to 1199px) */@media (max-width: 1199px) and (min-width: 768px) {    .container1 {        margin: 10px;        max-width: 90%;        padding: 0 10px;    }    .searchtext {        width: 80%;        max-width: 400px;        margin-right: 0;        padding-left: 20px;    }    .list {        left: auto;        right: 10px;        width: 200px;        max-width: 80%;    }    .textbox {        position: static;        margin: 10px;        gap: 10px;    }    .Header {        flex-wrap: wrap;        margin-left: 0;        transform: translateX(-30px);        justify-content: center;    }    .search-bar {        width: 100%;    }    .action {        gap: 20px;    }    .drawer {        height: auto;        flex-direction: row;        flex-wrap: wrap;    }    .item2 {        margin-left: auto;        margin-top: 20px;    }}
+/* Small screens (mobile phones, below 768px) */@media (max-width: 767px) {    .container1 {        margin: 10px;        padding: 0 5px;    }    .searchtext {        width: 100%;        padding-left: 15px;        margin-right: 0;        border-radius: 5px;    }    .search-bar {        width: 100%;        height: auto;    }    .list {        position: static;        width: 100%;        margin-top: 5px;    }    .textbox {        position: static;        flex-direction: column;        margin: 10px 0;        gap: 5px;    }    .Header {        flex-direction: column;        margin-left: 0;        transform: none;        align-items: center;        justify-content: center;    }    .action {        flex-direction: column;        gap: 10px;        align-items: center;    }    .btns {        flex-direction: column;        margin-top: 20px;        margin-right: 0;        align-items: center;    }    .icon {        justify-content: center;        margin: 10px 0;        float: none;    }    .drawer {        flex-direction: column;        height: auto;        padding: 10px;    }    .item2 {        margin-left: 0;        float: none;        margin-top: 10px;    }    .btngrp {        flex-direction: column;        align-items: center;        margin-right: 0;    }}

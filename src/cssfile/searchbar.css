@@ -1,0 +1,251 @@
+/* Base Styles (for larger screens or default) */
+.container1 {
+    width: 100%;
+    padding: 10px; /* Add some padding */
+    box-sizing: border-box; /* Include padding in element's total width/height */
+}
+
+.Header {
+    display: flex;
+    justify-content: space-between; /* Distribute items with space between them */
+    align-items: center; /* Vertically align items */
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    padding: 10px 0;
+}
+
+.para {
+    display: flex;
+    gap: 5px; /* Space between paragraphs */
+    align-items: center;
+    font-size: 1rem; /* Use relative font size */
+}
+
+.textboxes {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between search box and other input */
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+.textbox {
+    position: relative; /* For positioning the search icon and list */
+    display: flex;
+    align-items: center;
+    /* Remove fixed width here, let content dictate */
+}
+
+.searching, .search-bar {
+    position: relative; /* For positioning the search icon */
+    display: flex;
+    align-items: center;
+    width: 100%; /* Make it take full width of its parent */
+    max-width: 300px; /* Limit max width */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.searchtext {
+    flex-grow: 1; /* Allow input to grow */
+    border: none;
+    outline: none;
+    padding-left: 30px; /* Space for the search icon */
+    font-size: 1rem;
+    background-color: transparent; /* Inherit from parent */
+}
+
+.list {
+    position: absolute;
+    top: 100%; /* Position below the search bar */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #eee;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 10; /* Ensure it appears above other content */
+    max-height: 200px; /* Limit height and add scroll */
+    overflow-y: auto;
+}
+
+.list li {
+    padding: 8px 19px;
+    cursor: pointer;
+}
+
+.list li:hover {
+    background-color: #f0f0f0;
+}
+
+.inputb {
+    /* Adjust as needed, perhaps make it smaller or hide on mobile */
+    width: 100px; /* Example fixed width, consider making it flexible */
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.board_down {
+    /* Adjust positioning if needed */
+}
+
+.icon {
+    display: flex;
+    gap: 15px; /* Space between icons */
+    align-items: center;
+}
+
+.action {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the start of the cross axis */
+    flex-wrap: wrap;
+    padding: 10px 0;
+}
+
+.btngrp {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap; /* Allow buttons to wrap */
+}
+
+.buttons button {
+    background-color: white;
+    border: 1px solid #ccc; /* Add a border for visibility */
+    border-radius: 6px;
+    height: 35px; /* Adjust height */
+    padding: 5px 10px; /* Adjust padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.heading {
+    /* Remove fixed margins */
+    text-align: right; /* Align text to the right by default */
+    flex-basis: 100%; /* Take full width on smaller screens */
+    margin-top: 10px; /* Add some top margin */
+}
+
+.heading h3 {
+    margin-bottom: 5px; /* Space between h3 and h5 */
+}
+
+.heading h5 {
+    margin-top: 0;
+    color: #666;
+}
+
+.card1 {
+    padding: 10px;
+    /* Ensure Cards component itself is responsive */
+}
+
+/* Media Queries */
+
+/* Small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .Header {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align to the left */
+    }
+
+    .para {
+        margin-bottom: 10px;
+    }
+
+    .textboxes {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .textbox {
+        width: 100%; /* Take full width */
+        margin-bottom: 10px;
+    }
+
+    .searching, .search-bar {
+        max-width: 100%; /* Allow search bar to take full width */
+    }
+
+    .inputb {
+        width: 100%; /* Make this input full width too */
+        margin-top: 10px; /* Add space if stacked */
+    }
+
+    .icon {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: center; /* Center icons */
+    }
+
+    .action {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btngrp {
+        width: 100%;
+        justify-content: center; /* Center buttons */
+        margin-bottom: 15px;
+    }
+
+    .heading {
+        text-align: center; /* Center heading on small screens */
+        margin-left: 0 !important; /* Override inline styles if any */
+        margin-right: 0 !important;
+        width: 100%;
+    }
+
+    .heading h5 {
+        margin: 5px auto; /* Center h5 */
+    }
+}
+
+/* Medium devices (tablets, 601px to 768px) */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    .Header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .textboxes {
+        width: 100%;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .action {
+        align-items: center;
+    }
+
+    .heading {
+        text-align: center;
+        flex-basis: 100%;
+        margin-top: 15px;
+    }
+}
+
+/* Large devices (desktops, 769px and up) */
+@media only screen and (min-width: 769px) {
+    .Header {
+        flex-wrap: nowrap; /* Prevent wrapping on larger screens */
+    }
+
+    .textboxes {
+        flex-wrap: nowrap;
+    }
+
+    .action {
+        flex-wrap: nowrap;
+    }
+
+    .heading {
+        text-align: right;
+        flex-basis: auto; /* Let content dictate width */
+    }
+}

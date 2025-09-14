@@ -20,6 +20,7 @@ const size = {
   height: 200,
 };
 
+
 const StyledText = styled('text')(({ theme }) => ({
   fill: theme.palette.text.primary,
   textAnchor: 'middle',
@@ -38,8 +39,9 @@ function PieCenterLabel({ children }) {
 
 export default function PieChartWithCenterLabel() {
   return (
-   <div className='pie'> <PieChart series={[{ data, innerRadius: 70 ,outerRadius: 50}]} style={{marginRight:'5px'}} padding={20}  labelStyle={{transform: 'translateY(10px)',  }} labelDistance={20} labelPosition={{ x: 0, y: 10, }} colors={['#A7C7E7', '#1F51FF']} {...size} >
-      <PieCenterLabel>2<br/> Total</PieCenterLabel>
+   <div className='pie'> <PieChart series={[{ data, innerRadius: 70 ,outerRadius: 50}]} style={{marginRight:'3px'}} padding={20}  labelStyle={{transform: 'translateY(10px)',  }} labelDistance={40} labelPosition={{ x: 10, y: 10, }} colors={['#a3bdd5ff', '#3c5bcdff']} {...size} >
+      <PieCenterLabel>2<br/>Total</PieCenterLabel>
+      
     </PieChart></div>
   );
 }
