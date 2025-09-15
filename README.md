@@ -1,5 +1,11 @@
 # Getting Started with Create React App
+# AccuKnox Assignment
 
+This is a React-based assignment project.  
+- Landing page: `Home.jsx`  
+- Card heading updates on refresh  
+- Built with React, Bootstrap, and Tailwind
+- widget can be added by opening temperorary drawer whose button is add widget+ present in btn grp
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
